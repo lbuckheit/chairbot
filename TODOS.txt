@@ -1,0 +1,6 @@
+-Format the slack message better
+-Only run during waking hours
+-Abstract out to different files
+-Rename lastfive
+
+-venv?
