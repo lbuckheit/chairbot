@@ -67,9 +67,6 @@ def scrapeSizeC():
             messages.remove(message)
 
     message = "\n".join(messages)
-    print(message)
-    print(last_message)
-    print(message != last_message)
     if not message:
         cursor.close()
         return
