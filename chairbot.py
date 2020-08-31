@@ -10,12 +10,13 @@ if __name__ == "__main__":
     while True:
         print("{}: Starting scrape cycle".format(time.ctime()))
         try:
-            print("Checking last " + str(settings.NUM_RESULTS) + " cheap listings")
-            scraper.scrapeCheap()
-            time.sleep(15) # just trying to avoid anything that might get me rate limited
+            # print("Checking last " + str(settings.NUM_RESULTS) + " cheap listings")
+            # scraper.scrapeCheap()
+            # time.sleep(15) # just trying to avoid anything that might get me rate limited
             print("Checking last " + str(settings.NUM_RESULTS) + " size C listings")
             scraper.scrapeSizeC()
-            time.sleep(SCRAPE_INTERVAL)
+            time.sleep(15)
+            # time.sleep(SCRAPE_INTERVAL)
         except KeyboardInterrupt:
             print("Exiting....")
             sys.exit(1)

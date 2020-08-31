@@ -67,13 +67,16 @@ def scrapeSizeC():
             messages.remove(message)
 
     message = "\n".join(messages)
+    print(message)
+    print(last_message)
+    print(message != last_message)
     if not message:
         cursor.close()
         return
     if message != last_message:
         delete_query = 'DELETE FROM sizeC;'
         cursor.execute(delete_query)
-        update_query = "INSERT INTO cheap('last') values('" + message + "');"
+        update_query = "INSERT INTO sizeC('last') values('" + message + "');"
         cursor.execute(update_query)
         con.commit() # Important to commit changes to the DB
         slack_client.chat_postMessage(channel='sizec', text=message)
